@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AgendaViewDlg" widgetVar="AgendaViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewAgendaTitle}">
+            <h:form id="AgendaViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{agendaController.selected != null}">
+                        <h:outputText value="#{bundle.ViewAgendaLabel_id}"/>
+                        <h:outputText value="#{agendaController.selected.id}" title="#{bundle.ViewAgendaTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewAgendaLabel_nombre}"/>
+                        <h:outputText value="#{agendaController.selected.nombre}" title="#{bundle.ViewAgendaTitle_nombre}"/>
+                        <h:outputText value="#{bundle.ViewAgendaLabel_edad}"/>
+                        <h:outputText value="#{agendaController.selected.edad}" title="#{bundle.ViewAgendaTitle_edad}"/>
+                        <h:outputText value="#{bundle.ViewAgendaLabel_telefono}"/>
+                        <h:outputText value="#{agendaController.selected.telefono}" title="#{bundle.ViewAgendaTitle_telefono}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="AgendaViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
