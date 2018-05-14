@@ -58,6 +58,7 @@ public class AgendaController implements Serializable {
     }
 
     public Agenda getSelected() {
+        System.out.println(selected.toString());
         return selected;
     }
 
