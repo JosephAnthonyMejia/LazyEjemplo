@@ -5,6 +5,9 @@ import controller.util.JsfUtil;
 import controller.util.JsfUtil.PersistAction;
 import dao.AgendaFacade;
 
+
+
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -58,7 +61,6 @@ public class AgendaController implements Serializable {
     }
 
     public Agenda getSelected() {
-        System.out.println(selected.toString());
         return selected;
     }
 
